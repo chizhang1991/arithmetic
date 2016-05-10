@@ -1,7 +1,5 @@
 // partition1.java
-// insert display partition
-//       partition: swap
-// local 2(test?)
+
 //////////////////////////////////////////////
 
 class ArrayPar {

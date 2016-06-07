@@ -37,15 +37,23 @@ class ArrayBub {
 			*/
 			for(in = out+1; in < nElems; in++) {
 				if (a[out] > a[in])
-					swap(a[out],a[in]);
+					//swap(a[out],a[in]);
+					swap(out, in);
 			}
 		}
 	}
 //--------------------------------
+	/*
 	public void swap(long num1, long num2) {
 		long temp = num1;
 		num1 = num2;
 		num2 = temp;
+	}
+	*/
+	public void swap(int one, int two) {
+		long temp = a[one];
+		a[one] = a[two];
+		a[two] = temp;
 	}
 }
 

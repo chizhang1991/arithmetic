@@ -38,8 +38,6 @@ class ArrayBub {
 			for(in = out+1; in < nElems; in++) {
 				if (a[out] > a[in])
 					swap(a[out],a[in]);
-				else
-					;
 			}
 		}
 	}

@@ -33,7 +33,7 @@ class ArrayIns {
 		for (int out = 1; out < nElem; out++) {
 			marked = a[out];
 			int in = out;
-			while (in > 0 && a[in] > marked) {
+			while (in > 0 && a[in-1] > marked) {
 				a[in] = a[in-1];
 				in--;
 			}

@@ -76,6 +76,7 @@ class ReverseApp {
 		System.out.println("Enter a string: ");
 		System.out.flush();
 		input = getString();
+
 		if(input.equals(""))
 			break;
 
@@ -85,8 +86,7 @@ class ReverseApp {
 		}
 	}
 //-------------------------------------
-	public static String getString() 
-	throws IOException {
+	public static String getString() throws IOException {
 		InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(isr);
 		String s = br.readLine();

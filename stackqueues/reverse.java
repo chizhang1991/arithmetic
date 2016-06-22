@@ -58,7 +58,7 @@ class Reverser {
 
 		output = "";
 
-		while (!isEmpty()) {
+		while (!theStack.isEmpty()) {
 			char ch = theStack.pop();
 			output = output + ch;
 		}
@@ -72,6 +72,7 @@ class ReverseApp {
 		String input;
 		String output;
 
+		while(true) {
 		System.out.println("Enter a string: ");
 		System.out.flush();
 		input = getString();
@@ -81,6 +82,7 @@ class ReverseApp {
 		Reverser theReverser = new Reverser(input);
 		output = theReverser.doRev();
 		System.out.println("Reversed: " + output);
+		}
 	}
 //-------------------------------------
 	public static String getString() 

@@ -1,4 +1,4 @@
-arithmetic
+Algorithms in Java
 ===============
 Stacks and queues
 ---------------

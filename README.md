@@ -1,3 +1,3 @@
-# arithmetic 
+# Algorithms in Java
 # practice
 # Java

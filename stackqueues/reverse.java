@@ -67,7 +67,11 @@ class Reverser {
 }
 /////////////////////////////////////
 class ReverseApp {
-	public static void main (String args[]) {
+
+	public static void main (String args[]) 
+	throws IOException { //debug line82
+// unreported exception IOException
+// unreported exception IOException
 
 		String input;
 		String output;

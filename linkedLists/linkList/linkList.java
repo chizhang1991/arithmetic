@@ -74,33 +74,61 @@ class LinkList {
 	public Link deleteKey(int keyvalue) {
 		Link current = first;
 		Link previous = first;
-		Link temp;
+		Link temp = null;
 
+		//the list is empty
 		if(current == null) {
 			System.out.println("The list is empty.");
+			return temp;
 		}
+		//the list is not empty
 		else {
+			//delete the first element
 			if (first.key == keyvalue) {
 				temp = first;
 				first = first.next;
 				return temp;
 			}
+			//1st is not chosen
 			else {
-				while(current != null) {
-					previous = current;
-					current = current.next;
-
-					if (current.key == keyvalue) {
-						temp = current;
-						previous.next = current.next;
-						return temp;
+				while(current.key != keyvalue) {
+					//cannot find the element
+					if(current.next == null) {     // notice: current.next NOT current
+						System.out.println("The item you are trying to delete was not found");
+						return null;
+					}
+					else{
+						previous = current;
+						current = current.next;
 					}
 				}
-				System.out.println("The item you are trying to delete was not found");
+				temp = current;
+				previous.next = current.next;
+				return temp;
 			}
 		}
-		return null;
 	}
+/*
+	public Link deleteKey (int keyvalue) {
+		Link current = first;
+		Link previous = first;
+
+		while (current.key != keyvalue) {
+			if(current.next == null) 
+				return null;
+			else {
+				previous = current;
+				current = current.next;
+			}
+		}
+
+		if(current == first)
+			first = first.next;
+		else
+			previous.next = current.next;
+		return current;
+	}
+	*/
 }
 //============================
 class LinkListApp {
@@ -162,6 +190,8 @@ class LinkListApp {
 			temp.displayLink();
 			System.out.println();
 		}
+
+		theList.displayList();
 /**/		
 		System.out.println("delete all the elements: ");
 		while (!theList.isEmpty()) {
@@ -177,5 +207,13 @@ class LinkListApp {
 		temp = theList.find(5);
 		if(temp != null)
 			System.out.println("found it: " + temp);
+
+		System.out.println("Delete 5: ");
+		temp = theList.deleteKey(5);
+		if(temp != null) {
+			System.out.print("deleted it: ");
+			temp.displayLink();
+			System.out.println();
+		}
 	}
 }

@@ -69,7 +69,7 @@ class LinkList {
 		}
 	}
 }
-//////////////////////////////////
+//====================================
 class flListApp {
 	public static void main (String args[]) {
 		LinkList theList = new LinkList();

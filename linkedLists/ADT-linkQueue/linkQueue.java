@@ -22,27 +22,29 @@ class LinkList {
 		first = null;
 		last = null;
 	}
-//------------------------------
+
 	public boolean isEmpty() {
 		return (first == null);
 	}
-//------------------------------
+//---------------------------------
 	public void insertFirst (long datavalue) {
 		Link newLink = new Link(datavalue);
-		if (isEmpty()) 
+		if(isEmpty()) 
 			last = newLink;
 		newLink.next = first;
 		first = newLink;
 	}
-//-------------------------------
+
 	public void insertLast (long datavalue) {
-		Link newLink = new Link (datavalue);
-		if(isEmpty())
+		Link newLink = new Link(datavalue);
+		if(isEmpty()) {
 			first = newLink;
-		last.next = newLink;
+		}
+		else
+			last.next = newLink;
 		last = newLink;
 	}
-//------------------------------
+//---------------------------------
 	public Link deleteFirst() {
 		Link temp = first;
 		first = first.next;
@@ -90,7 +92,8 @@ class LinkQueue {
 }
 //===============================
 class QueueApp {
-	public static void main (String[] args) {
+	public static void main (String args[]) {
+
 		LinkQueue theQueue = new LinkQueue();
 
 		theQueue.insert(11);

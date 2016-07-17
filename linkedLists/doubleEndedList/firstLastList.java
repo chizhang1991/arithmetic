@@ -43,7 +43,8 @@ class LinkList {
 		if(isEmpty()) {
 			first = newLink;
 		}
-		last.next = newLink;
+		else
+			last.next = newLink;
 		last = newLink;
 	}
 //---------------------------------

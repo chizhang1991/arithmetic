@@ -28,19 +28,7 @@ class SortLink {
 		Link current = first;
 		Link previous = null; //Chi: 
 		Link temp = new Link(datavalue);
-/*
-		if (isEmpty())
-			first = temp;
-		else {
-			while ((current != null) && (current.data < datavalue)) {
-				previous = current;
-				current = current.next;
-			}
-			previous.next = temp;
-			//temp.next = current;
-		}
-		temp.next = current;
-*/
+
 		while((current != null) && datavalue > current.data) {
 			previous = current;
 			current = current.next;
@@ -55,63 +43,41 @@ class SortLink {
 	public Link delete (long datavalue) {
 		Link current = first;
 		Link previous = null;
-		//Link temp = first;
-/*
-		if (isEmpty()) { 
-			System.out.println("The list is empty.");
+		Link temp;
+
+		//Empty
+		if (isEmpty()) {
+			System.out.println("Empty, Cannot delete.");
 			return null;
 		}
+		//not empty
 		else {
-			while((current != null) && (current.data != datavalue)) {
+			//find the item current
+			while ((current != null) && (current.data != datavalue)) {
 				previous = current;
 				current = current.next;
 			}
-			Link temp = current;
-			previous.next = current.next;
-			System.out.print("The item has been deleted: ");
-			return temp;
+			// not find
+			if (current == null) {
+				System.out.println("Cannot find");
+				return null;
+			}
+			// find the first one
+			else if ((previous == null) && (current.data == datavalue)) {
+				temp = current;
+				first = first.next; // current first
+				System.out.print("You just deleted: ");
+				return temp;
+			}
+			// not the first one
+			else {
+				temp = current;
+				previous.next = current.next;
+				System.out.print("You just deleted: ");
+				return temp;
+			}
 		}
-*/
-/*
-		while((current != null) && (current.data != datavalue)) {
-			//temp = current.next;
-			previous = current;
-			current = current.next;
-		}
-		
-		if (current.data != datavalue) {
-			System.out.println("Cannot find the item you want to delete");
-			return null;
-		}
-		else if(first == null) {
-			System.out.println("The list is empty. Cannot delete.");
-			return null;
-		}
-		else {
-			previous.next = current.next;
-			System.out.print("The item has been deleted: ");
-			return temp;
-		}
-*/
-		while((current != null) && (current.data != datavalue)) {
-			previous = current;
-			current = current.next;
-		}
-		if (first == null) {
-			System.out.println("The list is empty. Cannot delete.");
-			return null;
-		}
-		else if (current.data != datavalue && current.next == null) {
-			System.out.println("The list is empty. Cannot delete.");
-			return null;
-		}
-		else{
-			Link temp = current;
-			previous.next = current.next;
-			System.out.print("The item has been deleted: ");
-			return temp;
-		}
-	}
+	}	
 //----------------------------
 	public Link deleteFirst() {
 		Link temp = first;
@@ -164,6 +130,5 @@ class SortApp {
 		System.out.println(theSort.delete(44).data);
 		theSort.displayList();
 
-		System.out.println(theSort.delete(22).data);
 	}
 }

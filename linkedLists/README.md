@@ -12,3 +12,6 @@ next field -- a reference to another link</br>
 >Abstract data types ADT</br>
 >>Stacks</br>
 >>Queues</br>
+</br>
+>Sorted list </br>
+>>items are arranged in sorted order by key value</br>

@@ -38,10 +38,10 @@ class LinkList {
 	public void insertLast (long datavalue) {
 		Link newLink = new Link(datavalue);
 		if(isEmpty()) {
-			first = newLink;
+			first = newLink; // if the list is empty, after insert first = last = newLink
 		}
 		else
-			last.next = newLink;
+			last.next = newLink; 
 		last = newLink;
 	}
 //---------------------------------
